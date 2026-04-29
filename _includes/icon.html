@@ -1,0 +1,5 @@
+{% capture icon_path %}assets/icons/{{ include.name }}.svg{% endcapture %}
+
+<span class="contact-link__icon">
+  <img src="{{ icon_path | relative_url }}" alt="{{ include.name | capitalize }}" width="22" height="22">
+</span>
