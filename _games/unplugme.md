@@ -3,7 +3,7 @@ title: "Unplug Me"
 slug: "unplugme"
 tagline: ""
 year: 2026
-status: "Alpha"
+status: "Prototype"
 itch_url: "https://filipustyy.itch.io/unplug-me"
 engine: "Unity"
 role: " Audio engineer · Game designer"
