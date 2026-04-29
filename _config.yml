@@ -1,5 +1,5 @@
-baseurl: "/jszbm.github.io"
 url: "https://jszbm.github.io"
+baseurl: ""
 
 title: "jszbm"
 tagline: "Game developer · Composer · 3D Artist"
