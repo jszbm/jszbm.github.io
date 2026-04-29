@@ -27,18 +27,24 @@ title: jszbm
   <div class="hero-links">
     {% if cfg.links.itch and cfg.links.itch != "" %}
     <a href="{{ cfg.links.itch }}" target="_blank" rel="noopener" class="btn btn--itch">
+      <span class="contact-link__icon">
       <img src="{{ cfg.icons.itch | relative_url }}" alt="Itchio" width="24" height="24">
+      </span>
       itch.io
     </a>
     {% endif %}
     {% if cfg.links.github and cfg.links.github != "" %}
     <a href="{{ cfg.links.github }}" target="_blank" rel="noopener" class="btn btn--primary">
+      <span class="contact-link__icon">
       <img src="{{ cfg.icons.github | relative_url }}" alt="GitHub" width="24" height="24">
+      </span>
       GitHub
     </a>
     {% endif %}
     <a href="{{ cfg.links.soundcloud }}" target="_blank" rel="noopener" class="btn">
+      <span class="contact-link__icon">
       <img src="{{ cfg.icons.soundcloud | relative_url }}" alt="SoundCloud" width="28" height="28">
+      </span>
       SoundCloud
     </a>
     <a href="#works" class="btn">
