@@ -27,6 +27,6 @@ audio:
 description: |
   Slayer is a retro style game that combines soulslike vibe with fast-paced first person combat.
 
-tags: [unity, 3D, soulslike, retro art, team]
+tags: [unity, 3D, singleplayer, soulslike, retro art, team]
 weight: 1   # lower = shown first
 ---

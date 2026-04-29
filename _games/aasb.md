@@ -20,6 +20,6 @@ screenshots:
 description: |
   A game about an angel that gets sent back to Earth for slacking off in heaven.
 
-tags: [unity, singleplayer, angel, jam]
+tags: [unity, 3D, singleplayer, bullet hell, jam]
 weight: 3
 ---
