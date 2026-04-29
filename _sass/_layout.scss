@@ -1,0 +1,238 @@
+@use "variables" as *;
+
+// ── LAYOUT ──────────────────────────────────────────────────
+
+// ---- Starfield / ember particle canvas ----
+#canvas-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.site-wrap { position: relative; z-index: 1; }
+
+// ---- NAV ----
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba($void, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: $b-thin;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $s4;
+  height: 54px;
+}
+
+.nav-brand {
+  font-family: $font-display;
+  font-size: 0.85rem;
+  color: $gold;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  &:hover { color: $gold-bright; text-shadow: 0 0 12px rgba($gold,0.4); }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: $s3;
+
+  a {
+    font-family: $font-heading;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $ash-light;
+    padding: 4px 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 100%;
+      height: 1px;
+      background: $gold;
+      transition: right 0.2s;
+    }
+    &:hover { color: $gold; text-shadow: none; }
+    &:hover::after { right: 0; }
+  }
+}
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: $b-thin;
+  color: $gold-dim;
+  padding: 6px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+// ---- HERO ----
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  text-align: center;
+  padding: $s6 $s2;
+  position: relative;
+  overflow: hidden;
+
+  // Vignette
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba($void, 0.7) 100%);
+    pointer-events: none;
+  }
+}
+
+.hero-crest {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: $s2;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba($gold, 0.6));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-greeting {
+  font-family: $font-display;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: $gold-dim;
+  margin-bottom: $s1;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-name {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: $gold;
+  text-shadow: 0 0 40px rgba($gold, 0.3), 0 4px 8px rgba($void, 0.9);
+  line-height: 1.05;
+  margin-bottom: $s2;
+  animation: fadeUp 0.8s 0.15s ease both;
+}
+
+.hero-tagline {
+  font-family: $font-ui;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: $parchment-mid;
+  opacity: 0.85;
+  margin-bottom: $s4;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-intro {
+  max-width: 560px;
+  color: $ash-light;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: $s4;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+
+.hero-links {
+  display: flex;
+  gap: $s2;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: $s3;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: $font-heading;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $gold-dim;
+  animation: pulse 2s ease-in-out infinite;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, $gold-dim, transparent);
+    margin: 6px auto 0;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+// ---- FOOTER ----
+.site-footer {
+  border-top: $b-ornate;
+  padding: $s4 $s2;
+  text-align: center;
+  background: $stone;
+
+  &__quote {
+    font-family: $font-ui;
+    font-style: italic;
+    color: $ash;
+    font-size: 0.9rem;
+    margin-bottom: $s1;
+
+    &::before { content: "❝ "; color: $font-ui; }
+    &::after  { content: " ❞"; color: $font-ui; }
+  }
+
+  &__copy {
+    font-family: $font-heading;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $gold-dim;
+    opacity: 0.6;
+  }
+}
+
+// ---- MOBILE NAV ----
+@media (max-width: 680px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 54px; left: 0; right: 0;
+    flex-direction: column;
+    background: rgba($void, 0.97);
+    border-bottom: $b-thin;
+    padding: $s2 $s3;
+    gap: $s2;
+
+    &.open { display: flex; }
+  }
+
+  .nav-hamburger { display: block; }
+}

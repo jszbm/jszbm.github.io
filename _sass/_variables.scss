@@ -1,0 +1,41 @@
+// ── GRIMOIRE PORTFOLIO — Design Tokens ──────────────────────
+
+// Palette
+$void:          #080604;
+$void-up:       #0f0c08;
+$stone:         #1c1610;
+$stone-light:   #2e2518;
+$parchment:     #f0e2bc;
+$parchment-mid: #d9c48a;
+$parchment-dim: #a8905a;
+$ink:           #1a1208;
+$ash:           #8a7e6a;
+$ash-light:     #b5a882;
+$gold:          #c9a036;
+$gold-bright:   #f0c84a;
+$gold-dim:      #7a6020;
+$gold-glow:     rgba(201,160,54,0.15);
+$ember:         #c04010;
+$ember-bright:  #e85a28;
+$teal:          #2a7a6a;
+$teal-bright:   #3ab898;
+
+// Typography
+$font-display:  'Cinzel Decorative', serif;
+$font-heading:  'Cinzel', serif;
+$font-body:     'IM Fell English', Georgia, serif;
+$font-ui:       'Cormorant Garamond', Georgia, serif;
+$font-mono:     'Courier Prime', monospace;
+
+// Spacing
+$s1: 0.5rem;   $s2: 1rem;    $s3: 1.5rem;
+$s4: 2rem;     $s5: 3rem;    $s6: 5rem;
+
+// Layout
+$max: 1100px;
+$prose: 720px;
+
+// Ornament borders
+$b-thin:   1px solid rgba($gold-dim, 0.35);
+$b-med:    2px solid rgba($gold-dim, 0.5);
+$b-ornate: 3px double rgba($gold, 0.55);

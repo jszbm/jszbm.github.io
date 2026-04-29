@@ -1,0 +1,102 @@
+{% assign g = include.game %}
+{% assign slug = g.slug | default: g.title | slugify %}
+
+<article class="game-card">
+
+  {%- comment -%} ── MEDIA ─────────────────────────────────── {%- endcomment -%}
+  {% if g.youtube_id %}
+  <div class="game-card__media"
+       onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/{{ g.youtube_id }}?autoplay=1\' frameborder=\'0\' allow=\'autoplay;encrypted-media\' allowfullscreen style=\'width:100%;height:100%;position:absolute;inset:0\'></iframe>'"
+       style="cursor:pointer">
+    <img src="https://img.youtube.com/vi/{{ g.youtube_id }}/maxresdefault.jpg"
+         alt="{{ g.title }} trailer thumbnail" loading="lazy">
+    <div class="game-card__media__play" style="opacity:1"></div>
+  </div>
+
+{% elsif g.screenshots and g.screenshots.size > 0 %}
+{% assign first = g.screenshots | first %}
+{% assign first_path = '/assets/games/' | append: slug | append: '/' | append: first.file %}
+<div class="game-card__media"
+     data-lightbox="{{ slug }}"
+     data-src="{{ first_path | relative_url }}"
+     data-caption="{{ first.caption }}">
+  <img src="{{ first_path | relative_url }}"
+       alt="{{ first.caption | default: g.title }}" loading="lazy">
+  {% if g.screenshots.size > 1 %}
+  <span class="game-card__media__count">📷 {{ g.screenshots.size }}</span>
+  {% endif %}
+  <div class="game-card__media__play"></div>
+</div>
+{% for shot in g.screenshots offset:1 %}
+{% assign shot_path = '/assets/games/' | append: slug | append: '/' | append: shot.file %}
+<span style="display:none"
+      data-lightbox="{{ slug }}"
+      data-src="{{ shot_path | relative_url }}"
+      data-caption="{{ shot.caption }}"></span>
+{% endfor %}
+
+  {% else %}
+  <div class="game-card__media game-card__media--empty">🎮</div>
+  {% endif %}
+
+  {%- comment -%} ── BODY ──────────────────────────────────── {%- endcomment -%}
+  <div class="game-card__body">
+    <div class="game-card__header">
+      <h3 class="game-card__title">{{ g.title }}</h3>
+      {% if g.status %}
+      {% assign status_class = g.status | downcase | replace: ' ', '-' %}
+      <span class="badge badge--{{ status_class }}">{{ g.status }}</span>
+      {% endif %}
+    </div>
+
+    {% if g.tagline %}
+    <p class="game-card__tagline">{{ g.tagline }}</p>
+    {% endif %}
+
+    <div class="game-card__meta">
+      {% if g.year %}<span>📅 {{ g.year }}</span>{% endif %}
+      {% if g.engine %}<span>⚙ {{ g.engine }}</span>{% endif %}
+      {% if g.role %}<span>🪶 {{ g.role }}</span>{% endif %}
+    </div>
+
+    {% if g.description %}
+    <div class="game-card__desc">{{ g.description | markdownify | strip_html | truncate: 220 }}</div>
+    {% endif %}
+
+    {% if g.tags and g.tags.size > 0 %}
+    <div class="game-card__tags">
+      {% for tag in g.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+
+    {%- comment -%} ── AUDIO PLAYER ─────────────────────── {%- endcomment -%}
+    {% if g.audio and g.audio.size > 0 %}
+    <div class="audio-player">
+      <p class="audio-player__label">🎵 Soundtrack</p>
+      {% for track in g.audio %}
+      <div class="audio-track" data-src="{{ track.file }}">
+        <button class="audio-track__play" aria-label="Play {{ track.title }}">▶</button>
+        <span class="audio-track__title">{{ track.title }}</span>
+        <div class="audio-track__progress"><div class="audio-track__progress-bar"></div></div>
+        <span class="audio-track__time">0:00</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {%- comment -%} ── ACTIONS ──────────────────────────── {%- endcomment -%}
+    <div class="game-card__actions">
+      {% if g.itch_url and g.itch_url != "" %}
+      <a href="{{ g.itch_url }}" target="_blank" rel="noopener" class="btn btn--itch">
+        🕹 Play on itch.io
+      </a>
+      {% endif %}
+      {% if g.github_url and g.github_url != "" %}
+      <a href="{{ g.github_url }}" target="_blank" rel="noopener" class="btn">
+        ⌥ Source
+      </a>
+      {% endif %}
+    </div>
+
+  </div>
+</article>

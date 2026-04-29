@@ -1,0 +1,179 @@
+---
+layout: default
+title: jszbm
+---
+
+<div id="lightbox" class="lightbox-overlay">
+  <button id="lb-close" class="lightbox-close">✕</button>
+  <img id="lb-img" src="" alt="">
+  <p id="lb-caption" class="lightbox-caption"></p>
+  <nav class="lightbox-nav">
+    <button id="lb-prev">← Prev</button>
+    <button id="lb-next">Next →</button>
+  </nav>
+</div>
+
+{%- assign cfg = site -%}
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="hero-greeting">{{ cfg.hero.greeting | default: "Hail, traveler." }}</div>
+  <h1 class="hero-name">{{ cfg.title }}</h1>
+  <p class="hero-tagline">{{ cfg.tagline }}</p>
+  <p class="hero-intro">{{ cfg.hero.intro }}</p>
+
+  <div class="hero-links">
+    {% if cfg.links.itch and cfg.links.itch != "" %}
+    <a href="{{ cfg.links.itch }}" target="_blank" rel="noopener" class="btn btn--itch">
+      🕹 itch.io
+    </a>
+    {% endif %}
+    {% if cfg.links.github and cfg.links.github != "" %}
+    <a href="{{ cfg.links.github }}" target="_blank" rel="noopener" class="btn btn--primary">
+      ⌥ GitHub
+    </a>
+    {% endif %}
+    <a href="#works" class="btn">
+      ⚔ View Works
+    </a>
+  </div>
+
+  <span class="hero-scroll" aria-hidden="true">Scroll</span>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WORKS / GAMES
+═══════════════════════════════════════════════════════════ -->
+<section id="works" aria-label="Works and projects">
+  <div class="section">
+    <h2 class="section-heading">Works &amp; Projects</h2>
+
+    {% assign games = site.games | sort: "weight" %}
+    {% if games.size > 0 %}
+    <div class="games-grid">
+      {% for game in games %}
+      {% include game-card.html game=game %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="text-align:center; color: var(--ash, #8a7e6a); font-style:italic; padding: 3rem 0;">
+      No works yet. Add <code>.md</code> files to <code>_games/</code> to populate this section.
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DISCIPLINES / SKILLS
+═══════════════════════════════════════════════════════════ -->
+{% if cfg.disciplines %}
+<section id="disciplines" aria-label="Skills and disciplines">
+  <div class="section">
+    <h2 class="section-heading">Skills</h2>
+    <div class="disciplines-grid">
+      {% for d in cfg.disciplines %}
+      <div class="discipline-card">
+        <div class="discipline-card__icon" aria-hidden="true">{{ d.icon }}</div>
+        <div class="discipline-card__name">{{ d.name }}</div>
+        <div class="discipline-card__detail">{{ d.detail }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREENSHOT GALLERY
+═══════════════════════════════════════════════════════════ -->
+<section id="gallery" aria-label="Screenshot gallery">
+  <div class="section">
+    <h2 class="section-heading">Screenshot gallery</h2>
+    <div class="gallery-grid">
+      {% for shot in site.data.gallery %}
+      {% assign path = '/assets/gallery/' | append: shot.file %}
+      <a data-lightbox="gallery" data-src="{{ path | relative_url }}" data-caption="{{ shot.caption }}" href="#gallery">
+        <img src="{{ path | relative_url }}" alt="{{ shot.caption }}" loading="lazy">
+      </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHRONICLE / TIMELINE
+═══════════════════════════════════════════════════════════ -->
+{% if cfg.timeline %}
+<section id="chronicle" aria-label="Experience timeline">
+  <div class="section" style="max-width: 720px;">
+    <h2 class="section-heading">Gallery</h2>
+    <div class="timeline">
+      {% for entry in cfg.timeline %}
+      <div class="timeline-item">
+        <div class="timeline-item__year">{{ entry.year }}</div>
+        <div class="timeline-item__title">{{ entry.title }}</div>
+        <div class="timeline-item__detail">{{ entry.detail }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════════════════ -->
+<section id="contact" aria-label="Contact">
+  <div class="contact-section">
+    <h2 class="section-heading" style="max-width:480px; margin-left:auto; margin-right:auto;">Contact</h2>
+    <p style="color:#b5a882; font-style:italic; max-width: 480px; margin: 0 auto 1rem;">
+      The ravens are always listening
+    </p>
+
+    <div class="contact-links">
+      {% if cfg.email and cfg.email != "" %}
+      <a href="mailto:{{ cfg.email }}" class="contact-link">
+        <span class="contact-link__icon">✉</span>
+        <span class="contact-link__label">Email</span>
+      </a>
+      {% endif %}
+
+      {% if cfg.links.itch and cfg.links.itch != "" %}
+      <a href="{{ cfg.links.itch }}" target="_blank" rel="noopener" class="contact-link contact-link--itch">
+        <span class="contact-link__icon">🕹</span>
+        <span class="contact-link__label">itch.io</span>
+      </a>
+      {% endif %}
+
+      {% if cfg.links.github and cfg.links.github != "" %}
+      <a href="{{ cfg.links.github }}" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link__icon">⌥</span>
+        <span class="contact-link__label">GitHub</span>
+      </a>
+      {% endif %}
+
+      {% if cfg.links.soundcloud and cfg.links.soundcloud != "" %}
+      <a href="{{ cfg.links.soundcloud }}" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link__icon">
+          <img src="{{ '/assets/images/soundcloud.svg' | relative_url }}" alt="SoundCloud" width="28" height="28">
+        </span>
+        <span class="contact-link__label">SoundCloud</span>
+      </a>
+      {% endif %}
+
+      {% if cfg.links.linkedin and cfg.links.linkedin != "" %}
+      <a href="{{ cfg.links.linkedin }}" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link__icon">in</span>
+        <span class="contact-link__label">LinkedIn</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</section>

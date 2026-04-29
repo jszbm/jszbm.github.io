@@ -1,0 +1,59 @@
+title: "jszbm"
+tagline: "Game developer · Composer · 3D Artist"
+description: "My personal website"
+email: "jorgenszchwcz@proton.me"
+
+collections:
+   games:
+     output: true
+    
+# Social / contact links
+links:
+  itch:    "https://jszbm.itch.io"
+  github:  "https://github.com/jszbm"
+  soundcloud: "https://soundcloud.com/jszkuma"
+  linkedin: ""          # leave blank to hide
+
+# Hero section — edit freely
+hero:
+  greeting:  "Hello traveler."
+  intro: >
+    I mainly make games and produce music. My favorite games are FFXIV and Dark Souls.
+
+# Skills — displayed as a "Disciplines" section
+disciplines:
+  - name: "Game design"
+    icon: "🎮"
+    detail: "Unity · Systems design"
+  - name: "Programming"
+    icon: "⚙️"
+    detail: "C# · C++ · Java · Python"
+  - name: "Sound & Music"
+    icon: "🎵"
+    detail: "Soundtrack · sound design · FMOD"
+  - name: "Art"
+    icon: "🖌️"
+    detail: " 3D modelling · Blender ·  Krita · Photoshop"
+
+# Timeline — experience / notable milestones
+# timeline:
+#   - year: "2024"
+#     title: "Lead Developer — Studio Name"
+#     detail: "Shipped two titles, led a team of 4, managed full pipeline from concept to release."
+#   - year: "2023"
+#     title: "Composer & SFX — Freelance"
+#     detail: "Scored 6 indie games; specialised in adaptive music systems with FMOD."
+#   - year: "2022"
+#     title: "Game Jam Circuit"
+#     detail: "Placed top 10 in 4 jams including GMTK 2022 and Ludum Dare 51."
+#   - year: "Circa 2012"
+#     title: ""
+#     detail: ""
+
+# Footer flavour text
+footer_quote: "Be safe, friend. Don't you dare go hollow...."
+
+plugins:
+  - jekyll-seo-tag
+
+markdown: kramdown

@@ -1,0 +1,592 @@
+@use "variables" as *;
+
+// ── COMPONENTS ──────────────────────────────────────────────
+
+
+// ============================================================
+// SCREENSHOT GALLERY
+// ============================================================
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $s2;
+}
+
+.gallery-grid a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border: $b-thin;
+  border-radius: 2px;
+  background: $stone;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+
+  &::after {
+    content: "✦";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: $gold;
+    background: rgba($void, 0.55);
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: rgba($gold, 0.5);
+    box-shadow: 0 8px 40px rgba($void, 0.8), 0 0 0 1px rgba($gold, 0.1);
+    transform: translateY(-3px);
+
+    &::after { opacity: 1; }
+
+    img { transform: scale(1.04); }
+  }
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+// Optional caption on hover
+.gallery-grid a[data-title]::before {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: $s1 $s2;
+  background: linear-gradient(to top, rgba($void, 0.9), transparent);
+  font-family: $font-ui;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: $parchment-mid;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gallery-grid a[data-title]:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $s1;
+  }
+}
+
+@media (max-width: 360px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
+
+// ============================================================
+// GAME CARDS GRID
+// ============================================================
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: $s3;
+}
+
+.game-card {
+  background: $stone;
+  border: $b-thin;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: rgba($gold, 0.5);
+    box-shadow: 0 8px 40px rgba($void, 0.8), 0 0 0 1px rgba($gold, 0.1);
+    transform: translateY(-3px);
+  }
+}
+
+// Screenshot area / hero image
+.game-card__media {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: $stone-light;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover img { transform: scale(1.04); }
+
+  // Placeholder when no image
+  &--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    opacity: 0.3;
+    user-select: none;
+  }
+
+  // Screenshot count badge
+  &__count {
+    position: absolute;
+    bottom: $s1;
+    right: $s1;
+    background: rgba($void, 0.8);
+    border: $b-thin;
+    font-family: $font-heading;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: $parchment-dim;
+    padding: 2px 8px;
+    pointer-events: none;
+  }
+
+  // Play button overlay (for video)
+  &__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($void, 0.4);
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &::after {
+      content: "▶";
+      font-size: 2rem;
+      color: $gold;
+      filter: drop-shadow(0 0 12px rgba($gold, 0.6));
+    }
+  }
+
+  &:hover &__play { opacity: 1; }
+}
+
+.game-card__body {
+  padding: $s3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $s1;
+  margin-bottom: $s1;
+}
+
+.game-card__title {
+  font-family: $font-heading;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: $parchment;
+  letter-spacing: 0.04em;
+}
+
+.game-card__tagline {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: $ash-light;
+  margin-bottom: $s2;
+}
+
+.game-card__meta {
+  display: flex;
+  gap: $s1;
+  flex-wrap: wrap;
+  margin-bottom: $s2;
+  font-family: $font-heading;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: $ash;
+
+  span::before { color: $gold-dim; margin-right: 3px; }
+}
+
+.game-card__desc {
+  font-size: 0.88rem;
+  color: $ash-light;
+  line-height: 1.65;
+  margin-bottom: $s2;
+  flex: 1;
+}
+
+.game-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: $s2;
+}
+
+.game-card__actions {
+  display: flex;
+  gap: $s1;
+  flex-wrap: wrap;
+  padding-top: $s2;
+  border-top: $b-thin;
+}
+
+// ============================================================
+// AUDIO PLAYER
+// ============================================================
+.audio-player {
+  margin-top: $s2;
+  padding-top: $s2;
+  border-top: $b-thin;
+}
+
+.audio-player__label {
+  font-family: $font-heading;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $gold-dim;
+  margin-bottom: $s1;
+}
+
+.audio-track {
+  display: flex;
+  align-items: center;
+  gap: $s1;
+  padding: 7px 10px;
+  background: rgba($void, 0.5);
+  border: $b-thin;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s;
+
+  &:hover, &.playing {
+    border-color: rgba($gold, 0.4);
+    background: rgba($gold, 0.04);
+  }
+
+  &__play {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    background: rgba($gold, 0.1);
+    border: 1px solid rgba($gold-dim, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.6rem;
+    color: $gold;
+    transition: all 0.2s;
+    user-select: none;
+    padding-left: 2px; // optical centring of ▶
+
+    &:hover { background: rgba($gold, 0.2); border-color: $gold; }
+  }
+
+  &__title {
+    flex: 1;
+    font-size: 0.82rem;
+    color: $parchment-mid;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__progress {
+    flex: 1;
+    height: 3px;
+    background: rgba($gold-dim, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &-bar {
+      height: 100%;
+      background: linear-gradient(to right, $gold-dim, $gold);
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+  }
+
+  &__time {
+    font-family: $font-mono;
+    font-size: 0.65rem;
+    color: $ash;
+    min-width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+}
+
+// ============================================================
+// LIGHTBOX (screenshot gallery)
+// ============================================================
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($void, 0.95);
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: $s2;
+  padding: $s3;
+
+  &.open { display: flex; }
+
+  img {
+    max-width: min(90vw, 1100px);
+    max-height: 75vh;
+    object-fit: contain;
+    border: $b-thin;
+    box-shadow: 0 0 60px rgba($void, 0.9);
+  }
+}
+
+.lightbox-caption {
+  font-style: italic;
+  color: $ash-light;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.lightbox-nav {
+  display: flex;
+  gap: $s2;
+
+  button {
+    background: rgba($stone, 0.8);
+    border: $b-thin;
+    color: $gold-dim;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-family: $font-heading;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+
+    &:hover { border-color: $gold; color: $gold; background: $gold-glow; }
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: $s2; right: $s2;
+  background: none;
+  border: $b-thin;
+  color: $ash;
+  width: 36px; height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+
+  &:hover { border-color: $gold; color: $gold; }
+}
+
+// ============================================================
+// SKILLS / DISCIPLINES
+// ============================================================
+.disciplines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: $s2;
+}
+
+.discipline-card {
+  background: $stone;
+  border: $b-thin;
+  padding: $s3;
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, $gold-dim, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    border-color: rgba($gold, 0.35);
+    background: rgba($gold, 0.03);
+    &::before { transform: scaleX(1); }
+  }
+
+  &__icon { font-size: 1.5rem; margin-bottom: $s1; line-height: 1; }
+
+  &__name {
+    font-family: $font-heading;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    color: $parchment;
+    margin-bottom: 6px;
+  }
+
+  &__detail {
+    font-size: 0.8rem;
+    color: $ash;
+    line-height: 1.6;
+  }
+}
+
+// ============================================================
+// TIMELINE
+// ============================================================
+.timeline {
+  position: relative;
+  padding-left: $s5;
+
+  // Vertical spine
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, $gold-dim, transparent);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: $s4;
+
+  // Dot on spine
+  &::before {
+    content: "✦";
+    position: absolute;
+    left: calc(-#{$s5} - 0.35em + 0.5px);
+    top: 2px;
+    font-size: 0.6rem;
+    color: $gold;
+  }
+}
+
+.timeline-item__year {
+  font-family: $font-display;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: $gold-dim;
+  margin-bottom: 2px;
+}
+
+.timeline-item__title {
+  font-family: $font-heading;
+  font-size: 1rem;
+  color: $parchment;
+  font-weight: 400;
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+
+.timeline-item__detail {
+  font-size: 0.88rem;
+  color: $ash-light;
+  line-height: 1.65;
+}
+
+// ============================================================
+// CONTACT
+// ============================================================
+.contact-section {
+  text-align: center;
+  max-width: $prose;
+  margin: 0 auto;
+  padding: $s6 $s2;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: $s2;
+  flex-wrap: wrap;
+  margin-top: $s4;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: $s2 $s3;
+  border: $b-thin;
+  background: $stone;
+  border-radius: 2px;
+  min-width: 100px;
+  transition: all 0.2s;
+
+  &__icon { font-size: 1.4rem; line-height: 1; }
+  &__label {
+    font-family: $font-heading;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $parchment-dim;
+  }
+
+  &:hover {
+    border-color: rgba($gold, 0.5);
+    background: $gold-glow;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba($void, 0.6);
+    .contact-link__label { color: $gold; }
+  }
+
+  // itch.io specific
+  &--itch:hover {
+    border-color: rgba($ember, 0.5);
+    background: rgba($ember, 0.07);
+    .contact-link__label { color: $ember-bright; }
+  }
+}
+
+.contact-link__icon img {
+  filter: invert(65%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(90%);
+  transition: filter 0.2s;
+}
+
+.contact-link:hover .contact-link__icon img {
+  filter: invert(75%) sepia(60%) saturate(800%) hue-rotate(5deg) brightness(110%);
+}
+
+// ============================================================
+// RESPONSIVE
+// ============================================================
+@media (max-width: 640px) {
+  .games-grid { grid-template-columns: 1fr; }
+  .disciplines-grid { grid-template-columns: 1fr 1fr; }
+  .timeline { padding-left: $s4; }
+  .contact-links { gap: $s1; }
+}
+
+@media (max-width: 400px) {
+  .disciplines-grid { grid-template-columns: 1fr; }
+}
