@@ -59,7 +59,7 @@ disciplines:
 #     detail: ""
 
 # Footer flavour text
-footer_quote: "Be safe, friend. Don't you dare go hollow...."
+footer_quote: "Be safe, friend. Don't you dare go Hollow."
 
 plugins:
   - jekyll-seo-tag
