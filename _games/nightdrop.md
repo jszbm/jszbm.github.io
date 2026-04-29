@@ -11,9 +11,9 @@ role: "3D artist · Techincal artist"
 
 screenshots:
 - file: "nightdrop1.png"
-  caption: "Gameplay"
-- file: "nightdrop2.png"
   caption: "Passing streetlight"
+- file: "nightdrop2.png"
+  caption: "It's dark"
 
 description: |
   You're in the backseat of your car watching droplets on the window race.
