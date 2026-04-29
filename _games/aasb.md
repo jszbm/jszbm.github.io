@@ -18,9 +18,7 @@ screenshots:
   caption: "Second level"
 
 description: |
-  A game about an angel that gets send back to earth for slacking off in heaven.
-
-  Play it no itch.io.
+  A game about an angel that gets sent back to Earth for slacking off in heaven.
 
 tags: [unity, singleplayer, angel, jam]
 weight: 3

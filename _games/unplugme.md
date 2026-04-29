@@ -17,9 +17,7 @@ screenshots:
   caption: "Casette guy"
 
 description: |
-  In this worled every robot needs to be always plugged in to stay alive. You want to see the sky. You need to get to the movie theatre to do so.
-
-  Play it no itch.io.
+  In this worled every robot needs to be always plugged in to stay alive. You want to see the sky. You need to get to the movie theater to do so.
 
 tags: [unity, singleplayer, platformer, robots, europe, jam, seriousjam]
 weight: 2
