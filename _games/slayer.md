@@ -17,9 +17,9 @@ screenshots:
 # youtube_id: "dQw4w9WgXcQ"
 
 # Audio tracks — put .mp3/.ogg files in /assets/games/ashenwold/audio/
-# audio:
-#   - title: "Main Theme — The Ashen Road"
-#     file: "/assets/games/ashenwold/audio/main-theme.mp3"
+audio:
+   - title: "First Area - Lane"
+     file: "/assets/games/slayer/audio/lane.mp3"
 #   - title: "Boss Battle — Pale Warden"
 #     file: "/assets/games/ashenwold/audio/boss-theme.mp3"
 
