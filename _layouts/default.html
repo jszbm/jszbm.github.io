@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en' }}">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,51 +9,53 @@
   <link rel="stylesheet" href="{{ '/assets/css/grimoire.css' | relative_url }}">
   {% seo %}
 </head>
+
 <body>
 
-<canvas id="canvas-bg" aria-hidden="true"></canvas>
+  <canvas id="canvas-bg" aria-hidden="true"></canvas>
 
-<div class="site-wrap">
+  <div class="site-wrap">
 
-  <nav class="site-nav" aria-label="Main navigation">
-    <a href="{{ '/' | relative_url }}" class="nav-brand">{{ site.title }}</a>
-    <button class="nav-hamburger" aria-label="Toggle menu">☰</button>
-    <ul class="nav-links">
-      <li><a href="#works">Works</a></li>
-      <li><a href="#disciplines">Skills</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}" class="nav-brand">{{ site.title }}</a>
+      <button class="nav-hamburger" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#disciplines">Skills</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-  {{ content }}
+    {{ content }}
 
-  <footer class="site-footer">
-    {% if site.footer_quote %}
-    <p class="site-footer__quote">{{ site.footer_quote }}</p>
-    {% endif %}
-    <p class="site-footer__copy">
-      &copy; {{ 'now' | date: '%Y' }} {{ site.title }}
-      &nbsp;·&nbsp;
-      Built with <a href="https://jekyllrb.com" style="color:inherit">Jekyll</a>
-      &nbsp;·&nbsp;
-      Grimoire Theme
-    </p>
-  </footer>
+    <footer class="site-footer">
+      {% if site.footer_quote %}
+      <p class="site-footer__quote">{{ site.footer_quote }}</p>
+      {% endif %}
+      <p class="site-footer__copy">
+        &copy; {{ 'now' | date: '%Y' }} {{ site.title }}
+        &nbsp;·&nbsp;
+        Built with <a href="https://jekyllrb.com" style="color:inherit">Jekyll</a>
+        &nbsp;·&nbsp;
+        Grimoire Theme
+      </p>
+    </footer>
 
-</div>
-
-<!-- Lightbox -->
-<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
-  <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
-  <img src="" alt="" id="lb-img">
-  <p class="lightbox-caption" id="lb-caption"></p>
-  <div class="lightbox-nav">
-    <button id="lb-prev">← Prev</button>
-    <button id="lb-next">Next →</button>
   </div>
-</div>
 
-<script src="{{ '/assets/js/grimoire.js' | relative_url }}"></script>
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
+    <img src="" alt="" id="lb-img">
+    <p class="lightbox-caption" id="lb-caption"></p>
+    <div class="lightbox-nav">
+      <button id="lb-prev">← Prev</button>
+      <button id="lb-next">Next →</button>
+    </div>
+  </div>
+
+  <script src="{{ '/assets/js/grimoire.js' | relative_url }}"></script>
 </body>
+
 </html>
