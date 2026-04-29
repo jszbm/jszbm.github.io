@@ -7,7 +7,7 @@ status: "WIP"           # Released / In Development / Prototype
 itch_url: ""
 github_url: ""               # blank to hide
 engine: "Unity"
-role: "Lead game designer, 3D artist, technical artist, software engineer"
+role: "Lead game designer · 3D artist · Technical artist · Backend engineer"
 
 screenshots:
 - file: "slayer1.png"
