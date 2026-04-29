@@ -3,7 +3,7 @@ title: "Slayer"
 slug: "slayer"
 tagline: "Soulslike meets Ultrakill"
 year: 
-status: "In Development"           # Released / In Development / Prototype
+status: "dev"           # Released / In Development / Prototype
 itch_url: ""
 github_url: ""               # blank to hide
 engine: "Unity"
