@@ -2,7 +2,7 @@ url: "https://jszbm.github.io"
 baseurl: ""
 
 title: "jszbm"
-tagline: "Game developer · Composer · 3D Artist"
+tagline: "Techincal artist · Music Composer"
 description: "My personal website"
 email: "jorgenszchwcz@proton.me"
 
@@ -26,22 +26,22 @@ icons:
 hero:
   greeting:  ""
   intro: >
-    I mainly make games and produce music. My favorite games are FFXIV and Dark Souls.
+    I mainly do techincal art and produce music. My favorite games are FFXIV, Dark Souls and Hollow Knight.
 
 # Skills — displayed as a "Disciplines" section
 disciplines:
-  - name: "Game design"
+  - name: "Game development"
     icon: "🎮"
-    detail: "Unity · Systems design"
+    detail: "Unity · Shaders · Development pipeline · Systems design"
   - name: "Programming"
     icon: "⚙️"
-    detail: "C# · C++ · Java · Python"
+    detail: "C# · C++ · Python · Java"
   - name: "Sound & Music"
     icon: "🎵"
-    detail: "Soundtrack · sound design · FMOD"
+    detail: "Soundtrack · Sound design · FMOD"
   - name: "Art"
     icon: "🖌️"
-    detail: " 3D modelling · Blender ·  Krita · Photoshop"
+    detail: " 3D modelling · Characters · Environment"
 
 # Timeline — experience / notable milestones
 # timeline:

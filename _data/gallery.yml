@@ -1,6 +1,10 @@
-- file: slayer-river.png
-  caption: "Custom shader handles which textures are drawn on the ground. Trees are scattered with Geometry Nodes."
-- file: player-rig.png
+- file: slayer/slayer-river.png
+  caption: "Custom shader handles which textures are drawn on the ground. Trees are scattered with Blender Geometry Nodes."
+- file: slayer/water.gif
+  caption: "Vertex and fragment shader for water. Used noise for ripples and waves, depth buffer for deepness."
+- file: slayer/dummy-kill.jpg
+  caption: "The dummy can't stand against the player's Sledgehammer."
+- file: slayer/player-rig.png
   caption: "The rig of the player's hands for Slayer uses inverse kinematics."
 - file: domowik.png
   caption: "An enemy model for one of my WIP games."
