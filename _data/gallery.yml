@@ -1,9 +1,9 @@
-- file: slayer/slayer-river.png
+- file: slayer/trees.jpg
   caption: "Custom shader handles which textures are drawn on the ground. Trees are scattered with Blender Geometry Nodes."
 - file: slayer/water.gif
   caption: "Vertex and fragment shader for water. Used noise for ripples and waves, depth buffer for deepness."
 - file: slayer/player-rig.png
-  caption: "The rig of the player's hands for Slayer uses inverse kinematics."
+  caption: "The rig of the player's hands for Slayer has inverse kinematics."
 - file: domowik.png
   caption: "An enemy model for one of my WIP games."
 - file: steam-switch.jpg

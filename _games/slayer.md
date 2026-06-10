@@ -10,8 +10,8 @@ engine: "Unity"
 role: "Lead game designer · 3D artist · Technical artist · Backend engineer"
 
 screenshots:
-- file: "slayer1.png"
-  caption: "The sunset on the hill aboe the River."
+- file: "slayer.png"
+  caption: "The sunset on the hill above the River."
 - file: "dummy-kill.jpg"
   caption: "Dummies can't stand against your Sledgehammer."
 - file: "goblins.jpg"
