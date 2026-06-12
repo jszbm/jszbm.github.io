@@ -15,12 +15,14 @@ links:
   itch:    "https://jszbm.itch.io"
   github:  "https://github.com/jszbm"
   soundcloud: "https://soundcloud.com/jszkuma"
+  backloggd: "https://backloggd.com/u/jorgen/games/"
   linkedin: "https://www.linkedin.com/in/jerzy-szachowicz/"          # leave blank to hide
 
 icons:
   itch: "/assets/icons/itchio.svg"
   github: "/assets/icons/github.svg"
   soundcloud: "/assets/icons/soundcloud.svg"
+  backloggd: "/assets/icons/backloggd.svg"
   
 # Hero section — edit freely
 hero:

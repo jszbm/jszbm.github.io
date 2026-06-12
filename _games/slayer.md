@@ -22,7 +22,7 @@ screenshots:
 
 # Audio tracks — put .mp3/.ogg files in /assets/games/ashenwold/audio/
 audio:
-   - title: "First Area - River"
+   - title: "River"
      file: "/assets/games/slayer/audio/lane.mp3"
 #   - title: "Boss Battle — Pale Warden"
 #     file: "/assets/games/ashenwold/audio/boss-theme.mp3"
