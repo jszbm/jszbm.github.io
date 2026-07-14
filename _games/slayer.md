@@ -4,7 +4,7 @@ slug: "slayer"
 tagline: "Soulslike meets Ultrakill"
 year: 
 status: "dev"           # Released / In Development / Prototype
-itch_url: ""
+itch_url: "https://jszbm.itch.io/soblinglayer"
 github_url: ""               # blank to hide
 engine: "Unity"
 role: "Lead game designer · 3D artist · Technical artist · Backend engineer"
