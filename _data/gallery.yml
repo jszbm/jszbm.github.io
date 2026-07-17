@@ -6,7 +6,7 @@
   caption: "The hierarchy for the Shop in Slayer"
 - file: "slayer/shop.png"
   caption: "Shop in action"
-- file: "slayer/dialoguegui.png"
+- file: "slayer/dialogueui.png"
   caption: "The dialogue UI structure in Slayer"
 - file: slayer/player-rig.png
   caption: "The rig of the player's hands for Slayer has inverse kinematics."
