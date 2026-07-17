@@ -2,11 +2,11 @@
   caption: "Custom shader handles which textures are drawn on the ground. Trees are scattered with Blender Geometry Nodes."
 - file: slayer/water.gif
   caption: "Vertex and fragment shader for water. Used noise for ripples and waves, depth buffer for deepness."
-- file: "shopui-hierarchy.png"
+- file: "slayer/shopui-hierarchy.png"
   caption: "The hierarchy for the Shop in Slayer"
-- file: "shop.png"
+- file: "slayer/shop.png"
   caption: "Shop in action"
-- file: "dialoguegui.png"
+- file: "slayer/dialoguegui.png"
   caption: "The dialogue UI structure in Slayer"
 - file: slayer/player-rig.png
   caption: "The rig of the player's hands for Slayer has inverse kinematics."
