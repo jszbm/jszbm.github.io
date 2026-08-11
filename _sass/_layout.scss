@@ -1,6 +1,9 @@
 @use "variables" as *;
 
 // ── LAYOUT ──────────────────────────────────────────────────
+.clickable {
+  cursor: $cursor-pointer
+}
 
 // ---- Starfield / ember particle canvas ----
 #canvas-bg {

@@ -1,6 +1,9 @@
 @use "variables" as *;
 
 // ── BASE ────────────────────────────────────────────────────
+.clickable {
+  cursor: $cursor-pointer
+}
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -107,10 +110,6 @@ img { max-width: 100%; height: auto; display: block; }
   &--released  { background: rgba($teal, 0.2);  color: $teal-bright; border: 1px solid rgba($teal, 0.4); }
   &--dev       { background: rgba($gold, 0.1);   color: $gold;        border: 1px solid rgba($gold, 0.3); }
   &--prototype { background: rgba($ash, 0.15);   color: $ash-light;   border: 1px solid rgba($ash, 0.3); }
-}
-
-.clickable {
-  cursor: $cursor-pointer
 }
 
 // Buttons

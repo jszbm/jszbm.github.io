@@ -1,7 +1,9 @@
 @use "variables" as *;
 
 // ── COMPONENTS ──────────────────────────────────────────────
-
+.clickable {
+  cursor: $cursor-pointer
+}
 
 // ============================================================
 // SCREENSHOT GALLERY
