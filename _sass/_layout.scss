@@ -32,7 +32,7 @@
 }
 
 .nav-brand {
-  @extend .clickable;
+  //@extend .clickable;
   font-family: $font-display;
   font-size: 0.85rem;
   color: $gold;
@@ -47,7 +47,7 @@
   gap: $s3;
 
   a {
-    @extend .clickable;
+    //@extend .clickable;
     font-family: $font-heading;
     font-size: 0.65rem;
     letter-spacing: 0.12em;
@@ -227,7 +227,7 @@
 // ---- MOBILE NAV ----
 @media (max-width: 680px) {
   .nav-links {
-    @extend .clickable;
+    //@extend .clickable;
     display: none;
     position: fixed;
     top: 54px; left: 0; right: 0;
@@ -240,5 +240,8 @@
     &.open { display: flex; }
   }
 
-  .nav-hamburger { @extend .clickable; display: block; }
+  .nav-hamburger {
+    //@extend .clickable;
+    display: block;
+  }
 }
