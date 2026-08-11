@@ -86,8 +86,11 @@ title: jszbm
     <h2 class="section-heading">Skills</h2>
     <div class="disciplines-grid">
       {% for d in cfg.disciplines %}
+      
       <div class="discipline-card">
+        {% if cfg.disciplines.icon %}
         <div class="discipline-card__icon" aria-hidden="true">{{ d.icon }}</div>
+        {% endif %}
         <div class="discipline-card__name">{{ d.name }}</div>
         <div class="discipline-card__detail">{{ d.detail }}</div>
       </div>

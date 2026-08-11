@@ -28,23 +28,26 @@ icons:
 hero:
   greeting:  ""
   intro: >
-    I write code, create shaders, do 3D modelling and character/level design and make electronic music.
+    I love coding, shaders, 3D modelling and character design and electronic music.
     My favorite games are FFXIV, Dark Souls and Hollow Knight.
 
 # Skills — displayed as a "Disciplines" section
 disciplines:
-  - name: "Gamedev"
+  - name: "Games"
     icon: ""
-    detail: "Unity · Shaders · Development pipeline · Systems design"
+    detail: "Unity · Shaders · Asset pipleline · Testing"
+
   - name: "Programming"
     icon: ""
     detail: "C# · C++ · Java · Python"
+
   - name: "Sound"
     icon: ""
     detail: "Music · Sound design · FMOD"
+
   - name: "Art"
     icon: ""
-    detail: " 3D modelling · Characters · Environment"
+    detail: "3D · Characters · Environment"
 
 # Timeline — experience / notable milestones
 # timeline:
