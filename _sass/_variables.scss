@@ -39,3 +39,7 @@ $prose: 720px;
 $b-thin:   1px solid rgba($gold-dim, 0.35);
 $b-med:    2px solid rgba($gold-dim, 0.5);
 $b-ornate: 3px double rgba($gold, 0.55);
+
+//Cursor
+$cursor-default: url("/assets/cursor/Arrow.cur"), default;
+$cursor-pointer: url("/assets/cursor/Link.cur"), pointer;
