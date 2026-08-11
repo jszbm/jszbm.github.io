@@ -109,8 +109,13 @@ img { max-width: 100%; height: auto; display: block; }
   &--prototype { background: rgba($ash, 0.15);   color: $ash-light;   border: 1px solid rgba($ash, 0.3); }
 }
 
+.clickable {
+  cursor: $cursor-pointer
+}
+
 // Buttons
 .btn {
+  @extend .clickable;
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
@@ -122,7 +127,6 @@ img { max-width: 100%; height: auto; display: block; }
   border: $b-thin;
   color: $parchment-mid;
   background: transparent;
-  cursor: $cursor-pointer;
   transition: all 0.2s;
 
   &:hover {

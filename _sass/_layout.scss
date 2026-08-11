@@ -29,6 +29,7 @@
 }
 
 .nav-brand {
+  @extend .clickable;
   font-family: $font-display;
   font-size: 0.85rem;
   color: $gold;
@@ -43,6 +44,7 @@
   gap: $s3;
 
   a {
+    @extend .clickable;
     font-family: $font-heading;
     font-size: 0.65rem;
     letter-spacing: 0.12em;
@@ -71,7 +73,7 @@
   color: $gold-dim;
   padding: 6px 10px;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: $cursor-pointer;
   line-height: 1;
 }
 
@@ -222,6 +224,7 @@
 // ---- MOBILE NAV ----
 @media (max-width: 680px) {
   .nav-links {
+    @extend .clickable;
     display: none;
     position: fixed;
     top: 54px; left: 0; right: 0;
@@ -234,5 +237,5 @@
     &.open { display: flex; }
   }
 
-  .nav-hamburger { display: block; }
+  .nav-hamburger { @extend .clickable; display: block; }
 }

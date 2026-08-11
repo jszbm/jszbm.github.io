@@ -7,7 +7,7 @@
   {% if g.youtube_id %}
   <div class="game-card__media"
     onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/{{ g.youtube_id }}?autoplay=1\' frameborder=\'0\' allow=\'autoplay;encrypted-media\' allowfullscreen style=\'width:100%;height:100%;position:absolute;inset:0\'></iframe>'"
-    style="cursor:$cursor-pointer">
+    style="cursor:pointer">
     <img src="https://img.youtube.com/vi/{{ g.youtube_id }}/maxresdefault.jpg" alt="{{ g.title }} trailer thumbnail"
       loading="lazy">
     <div class="game-card__media__play" style="opacity:1"></div>
