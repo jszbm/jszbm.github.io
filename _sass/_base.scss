@@ -14,7 +14,9 @@ body {
   background: $void;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  cursor: url("../assets/cursor/Arrow.cur"), pointer;
+  cursor: url("../assets/cursor/Arrow.cur"), auto;
+  cursor: url("../assets/cursor/Link.cur"), pointer;
+  
 }
 
 // Custom scrollbar
