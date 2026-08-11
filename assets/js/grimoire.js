@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.globalAlpha = this.a;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = this.gold ? '#c9a036' : '#e0d4b0';
+        ctx.fillStyle = this.gold ? '#ffffff' : '#e0d4b0';
         ctx.fill();
         if (this.gold && this.r > 1) {
-          ctx.shadowColor = '#c9a036';
+          ctx.shadowColor = '#bababa';
           ctx.shadowBlur  = 6;
           ctx.fill();
         }

@@ -1,31 +1,36 @@
 // ── GRIMOIRE PORTFOLIO — Design Tokens ──────────────────────
 @use "fonts" as *;
 // Palette
-$void:          #080604;
-$void-up:       #0f0c08;
-$stone:         #1c1610;
+$void:          #000000;
+$void-up:       #1a163e;
+$stone:         #101010;
 $stone-light:   #2e2518;
-$parchment:     #f0e2bc;
-$parchment-mid: #d9c48a;
-$parchment-dim: #a8905a;
+$parchment:     #c3c3c3;
+$parchment-mid: #c3c3c3;
+$parchment-dim: #c3c3c3;
 $ink:           #1a1208;
-$ash:           #8a7e6a;
-$ash-light:     #b5a882;
-$gold:          #c9a036;
-$gold-bright:   #f0c84a;
-$gold-dim:      #7a6020;
-$gold-glow:     rgba(201,160,54,0.15);
+$ash:           #c3c3c3;
+$ash-light:     #c3c3c3;
+$gold:          #d7d7d7;
+$gold-bright:   #ffffff;
+$gold-dim:      #b4b4b4;
+$plum:          #492d4b;
+$dark-blue:     #0c1224;
+$gold-glow:     rgba(114, 114, 114, 0.15);
+$itchy-dark:#994343;
+$itchy:#fa5c5c;
 $ember:         #c04010;
 $ember-bright:  #e85a28;
-$teal:          #2a7a6a;
-$teal-bright:   #3ab898;
+$teal:          #255558;
+$teal-bright:   #1b8474;
+
+
+// Icon filters
+$filter-default: invert(10%) sepia(0%) saturate(500%) hue-rotate(0deg) brightness(90%);
+$filter-hover: invert(10%) sepia(00%) saturate(500%) hue-rotate(0deg) brightness(110%);
+$filter-itch: invert(50%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(110%);
 
 // Typography
-/*$font-display:  'Cinzel Decorative', serif;
-$font-heading:  'Cinzel', serif;
-$font-body:     'IM Fell English', Georgia, serif;
-$font-ui:       'Cormorant Garamond', Georgia, serif;
-$font-mono:     'Courier Prime', monospace;*/
 $font-display:  'Trajan Pro';
 $font-heading:  'Trajan Pro';
 $font-body:     'Perpetua';
@@ -48,3 +53,35 @@ $b-ornate: 3px double rgba($gold, 0.55);
 //Cursor
 $cursor-default: url("/assets/cursor/Arrow.cur"), default;
 $cursor-pointer: url("/assets/cursor/Link.cur"), pointer;
+
+
+// Old-color-palette
+/*
+$void:          #080604;
+$void-up:       #0f0c08;
+$stone:         #1c1610;
+$stone-light:   #2e2518;
+$parchment:     #f0e2bc;
+$parchment-mid: #d9c48a;
+$parchment-dim: #a8905a;
+$ink:           #1a1208;
+$ash:           #8a7e6a;
+$ash-light:     #b5a882;
+$gold:          #c9a036;
+$gold-bright:   #f0c84a;
+$gold-dim:      #7a6020;
+$gold-glow:     rgba(201,160,54,0.15);
+$ember:         #c04010;
+$ember-bright:  #e85a28;
+$teal:          #2a7a6a;
+$teal-bright:   #3ab898;
+*/
+
+// Old typography
+/*
+$font-display:  'Cinzel Decorative', serif;
+$font-heading:  'Cinzel', serif;
+$font-body:     'IM Fell English', Georgia, serif;
+$font-ui:       'Cormorant Garamond', Georgia, serif;
+$font-mono:     'Courier Prime', monospace;
+*/

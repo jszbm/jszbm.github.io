@@ -20,7 +20,7 @@
     data-caption="{{ first.caption }}">
     <img src="{{ first_path | relative_url }}" alt="{{ first.caption | default: g.title }}" loading="lazy">
     {% if g.screenshots.size > 1 %}
-    <span class="game-card__media__count">📷 {{ g.screenshots.size }}</span>
+    <span class="game-card__media__count">🖼 {{ g.screenshots.size }}</span>
     {% endif %}
     <div class="game-card__media__play"></div>
   </div>
@@ -49,9 +49,9 @@
     {% endif %}
 
     <div class="game-card__meta">
-      {% if g.year %}<span>📅 {{ g.year }}</span>{% endif %}
+      {% if g.year %}<span>年 {{ g.year }}</span>{% endif %}
       {% if g.engine %}<span>⚙ {{ g.engine }}</span>{% endif %}
-      {% if g.role %}<span>🪶 {{ g.role }}</span>{% endif %}
+      {% if g.role %}<span>役割 {{ g.role }}</span>{% endif %}
     </div>
 
     {% if g.description %}
@@ -85,7 +85,7 @@
     <div class="game-card__actions">
       {% if g.itch_url and g.itch_url != "" %}
       <a href="{{ g.itch_url }}" target="_blank" rel="noopener" class="btn btn--itch">
-        <span class="contact-link__icon">
+        <span class="contact-link__icon--itch">
           <img src="{{ cfg.icons.itch | relative_url }}" alt="Itchio" width="24" height="24">
         </span>
         Play on itch.io

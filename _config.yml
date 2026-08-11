@@ -69,5 +69,3 @@ footer_quote: "Be safe, friend. Don't you dare go Hollow."
 
 plugins:
   - jekyll-seo-tag
-
-markdown: kramdown

@@ -106,7 +106,7 @@
 }
 
 .game-card {
-  background: $stone;
+  background: radial-gradient(rgba($stone, .8), rgba($void, .6));
   border: $b-thin;
   border-radius: 2px;
   overflow: hidden;
@@ -249,6 +249,7 @@
   gap: $s1;
   flex-wrap: wrap;
   padding-top: $s2;
+  vertical-align: middle;
   border-top: $b-thin;
 }
 
@@ -419,7 +420,7 @@
 }
 
 .discipline-card {
-  background: $stone;
+  background: radial-gradient(rgba($stone, .8), rgba($void, .6));
   border: $b-thin;
   padding: $s3;
   border-radius: 2px;
@@ -536,14 +537,15 @@
 }
 
 .contact-link {
-  @extend .clickable;
+  @extend clickable;
+  transition: .1s;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   padding: $s2 $s3;
   border: $b-thin;
-  background: $stone;
+  background: rgba($stone, .8);
   border-radius: 2px;
   min-width: 100px;
   transition: all 0.2s;
@@ -552,7 +554,7 @@
   &__label {
     font-family: $font-ui;
     font-size: .8rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: $parchment-dim;
   }
@@ -567,19 +569,27 @@
 
   // itch.io specific
   &--itch:hover {
-    border-color: rgba($ember, 0.5);
-    background: rgba($ember, 0.07);
-    .contact-link__label { color: $ember-bright; }
+    border-color: rgba($itchy-dark, 0.5);
+    background: rgba($itchy-dark, 0.07);
+    .contact-link__label { color: $itchy; }
   }
 }
 
 .contact-link__icon img {
-  filter: invert(65%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(90%);
+  filter: $filter-default;
   transition: filter 0.2s;
+
+  &--itch {
+    filter: $filter-itch;
+  }
 }
 
 .contact-link:hover .contact-link__icon img {
-  filter: invert(75%) sepia(60%) saturate(800%) hue-rotate(5deg) brightness(110%);
+  filter: $filter-hover;
+
+  &--itch:hover {
+    filter: $filter-itch;
+  }
 }
 
 // ============================================================

@@ -18,9 +18,10 @@
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba($void, 0.85);
-  backdrop-filter: blur(8px);
-  border-bottom: $b-thin;
+  background: linear-gradient($void, rgba(0,0,0,0));
+  mask: linear-gradient(black, black, transparent);
+  backdrop-filter: blur(2px);
+  //border-bottom: $b-thin;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,7 +93,7 @@
   // Vignette
   &::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
     background: radial-gradient(ellipse at center, transparent 30%, rgba($void, 0.7) 100%);
     pointer-events: none;
@@ -124,7 +125,7 @@
 
 .hero-name {
   font-family: $font-display;
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(2rem, 8vw, 2.5rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   color: $gold;
@@ -196,9 +197,9 @@
 // ---- FOOTER ----
 .site-footer {
   border-top: $b-ornate;
-  padding: $s4 $s2;
+  padding: $s2 $s2;
   text-align: center;
-  background: $stone;
+  background: linear-gradient(rgba($stone, 0.5), $void);
 
   &__quote {
     font-family: $font-ui;
@@ -207,13 +208,13 @@
     font-size: 1rem;
     margin-bottom: $s1;
 
-    &::before { content: "❝ "; color: $font-ui; }
-    &::after  { content: " ❞"; color: $font-ui; }
+    &::before { content: "“ "; color: $font-ui; }
+    &::after  { content: " ”"; color: $font-ui; }
   }
 
   &__copy {
     font-family: $font-ui;
-    font-size: 1rem;
+    font-size: .8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: $gold-dim;

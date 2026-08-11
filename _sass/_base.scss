@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 // ── BASE ────────────────────────────────────────────────────
-.clickable {
+clickable {
   cursor: $cursor-pointer
 }
 
@@ -14,7 +14,7 @@ body {
   font-size: 1.05rem;
   line-height: 1.75;
   color: $parchment;
-  background: $void;
+  background: linear-gradient($void-up, $void);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
@@ -86,10 +86,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 // Tag pill
 .tag {
-  font-family: $font-heading;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: $font-ui;
+  font-size: .8rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
   padding: 2px 8px;
   border: 1px solid rgba($gold-dim, 0.5);
   color: $parchment-dim;
@@ -101,15 +101,15 @@ img { max-width: 100%; height: auto; display: block; }
 // Status badge
 .badge {
   font-family: $font-ui;
-  font-size: .6rem;
+  font-size: .8rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 0px 8px;
   border-radius: 2px;
 
   &--released  { background: rgba($teal, 0.2);  color: $teal-bright; border: 1px solid rgba($teal, 0.4); }
-  &--dev       { background: rgba($gold, 0.1);   color: $gold;        border: 1px solid rgba($gold, 0.3); }
-  &--prototype { background: rgba($ash, 0.15);   color: $ash-light;   border: 1px solid rgba($ash, 0.3); }
+  &--dev       { background: rgba($gold, 0.1);  color: $gold;        border: 1px solid rgba($gold, 0.3); }
+  &--prototype { background: rgba($ash, 0.15);  color: $ash-light;   border: 1px solid rgba($ash, 0.3);  }
 }
 
 // Buttons
@@ -117,16 +117,16 @@ img { max-width: 100%; height: auto; display: block; }
   @extend .clickable;
   display: inline-flex;
   align-items: center;
-  gap: 0.4em;
+  gap: .4em;
   font-family: $font-heading;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: .7rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  padding: 9px 20px;
+  padding: 9px 18px;
   border: $b-thin;
   color: $parchment-mid;
   background: transparent;
-  transition: all 0.2s;
+  transition: all .2s;
 
   &:hover {
     border-color: $gold;
@@ -147,11 +147,11 @@ img { max-width: 100%; height: auto; display: block; }
   }
 
   &--itch {
-    border-color: rgba($ember, 0.5);
-    color: $ember-bright;
-    background: rgba($ember, 0.06);
+    border-color: rgba($gold, 0.5);
+    color: $gold;
+    background: rgba($gold, 0.06);
     font-family: $font-ui;
-    &:hover { border-color: $ember-bright; background: rgba($ember, 0.15); }
+    &:hover { color: $itchy; border-color: $itchy; background: rgba($itchy, 0.2);}
   }
 }
 
