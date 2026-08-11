@@ -7,7 +7,7 @@ status: "Released"
 itch_url: "https://vomchick.itch.io/night-drop"
 github_url: ""
 engine: "Unity"
-role: "3D artist · Techincal artist"
+role: "3D artist · Technical artist"
 
 screenshots:
 - file: "nightdrop1.png"

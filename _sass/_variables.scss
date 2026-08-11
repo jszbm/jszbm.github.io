@@ -1,5 +1,5 @@
 // ── GRIMOIRE PORTFOLIO — Design Tokens ──────────────────────
-
+@use "fonts" as *;
 // Palette
 $void:          #080604;
 $void-up:       #0f0c08;
@@ -26,9 +26,9 @@ $font-heading:  'Cinzel', serif;
 $font-body:     'IM Fell English', Georgia, serif;
 $font-ui:       'Cormorant Garamond', Georgia, serif;
 $font-mono:     'Courier Prime', monospace;*/
-$font-display:  'Trajan';
-$font-heading:  'Trajan';
-$font-body:     'Perpetua', Georgia, serif;
+$font-display:  'Trajan Pro';
+$font-heading:  'Trajan Pro';
+$font-body:     'Perpetua';
 $font-ui:       'Perpetua';
 $font-mono:     'Courier Prime', monospace;
 

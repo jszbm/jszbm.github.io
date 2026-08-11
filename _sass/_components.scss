@@ -155,7 +155,7 @@
     right: $s1;
     background: rgba($void, 0.8);
     border: $b-thin;
-    font-family: $font-heading;
+    font-family: $font-ui;
     font-size: 0.6rem;
     letter-spacing: 0.1em;
     color: $parchment-dim;
@@ -221,7 +221,7 @@
   flex-wrap: wrap;
   margin-bottom: $s2;
   font-family: $font-heading;
-  font-size: 0.6rem;
+  font-size: .6rem;
   letter-spacing: 0.08em;
   color: $ash;
 
@@ -241,6 +241,7 @@
   flex-wrap: wrap;
   gap: 5px;
   margin-bottom: $s2;
+  font-family: $font-ui;
 }
 
 .game-card__actions {
@@ -261,7 +262,7 @@
 }
 
 .audio-player__label {
-  font-family: $font-heading;
+  font-family: $font-ui;
   font-size: 0.6rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -331,7 +332,7 @@
   }
 
   &__time {
-    font-family: $font-mono;
+    font-family: $font-ui;
     font-size: 0.65rem;
     color: $ash;
     min-width: 36px;
@@ -367,9 +368,9 @@
 }
 
 .lightbox-caption {
-  font-style: italic;
+  font-style: normal;
   color: $ash-light;
-  font-size: 0.88rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -549,8 +550,8 @@
 
   &__icon { font-size: 1.4rem; line-height: 1; }
   &__label {
-    font-family: $font-heading;
-    font-size: 0.6rem;
+    font-family: $font-ui;
+    font-size: .8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: $parchment-dim;

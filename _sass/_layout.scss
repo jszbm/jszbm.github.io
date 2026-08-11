@@ -124,7 +124,7 @@
 
 .hero-name {
   font-family: $font-display;
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   color: $gold;
@@ -136,7 +136,7 @@
 
 .hero-tagline {
   font-family: $font-ui;
-  font-style: italic;
+  font-style: regular;
   font-size: clamp(1rem, 2.5vw, 1.35rem);
   color: $parchment-mid;
   opacity: 0.85;
@@ -147,7 +147,7 @@
 .hero-intro {
   max-width: 560px;
   color: $ash-light;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.8;
   margin-bottom: $s4;
   animation: fadeUp 0.8s 0.45s ease both;
@@ -204,7 +204,7 @@
     font-family: $font-ui;
     font-style: italic;
     color: $ash;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: $s1;
 
     &::before { content: "❝ "; color: $font-ui; }
@@ -212,8 +212,8 @@
   }
 
   &__copy {
-    font-family: $font-heading;
-    font-size: 0.6rem;
+    font-family: $font-ui;
+    font-size: 1rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: $gold-dim;

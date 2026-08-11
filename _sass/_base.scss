@@ -100,9 +100,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 // Status badge
 .badge {
-  font-family: $font-heading;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
+  font-family: $font-ui;
+  font-size: .6rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 2px;
@@ -150,6 +150,7 @@ img { max-width: 100%; height: auto; display: block; }
     border-color: rgba($ember, 0.5);
     color: $ember-bright;
     background: rgba($ember, 0.06);
+    font-family: $font-ui;
     &:hover { border-color: $ember-bright; background: rgba($ember, 0.15); }
   }
 }
