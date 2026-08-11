@@ -34,16 +34,16 @@ hero:
 # Skills — displayed as a "Disciplines" section
 disciplines:
   - name: "Gamedev"
-    icon: "🎮"
+    icon: ""
     detail: "Unity · Shaders · Development pipeline · Systems design"
   - name: "Programming"
-    icon: "⚙️"
+    icon: ""
     detail: "C# · C++ · Java · Python"
   - name: "Sound"
-    icon: "🎵"
+    icon: ""
     detail: "Music · Sound design · FMOD"
   - name: "Art"
-    icon: "🖌️"
+    icon: ""
     detail: " 3D modelling · Characters · Environment"
 
 # Timeline — experience / notable milestones
