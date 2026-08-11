@@ -13,14 +13,13 @@ body {
   font-family: $font-body;
   font-size: 1.05rem;
   line-height: 1.75;
-  color: $parchment;
   background: linear-gradient($void-up, $void);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
 // Custom scrollbar
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: thin; }
 ::-webkit-scrollbar-track { background: $stone; }
 ::-webkit-scrollbar-thumb { background: $gold-dim; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: $gold; }
