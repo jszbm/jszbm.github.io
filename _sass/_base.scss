@@ -7,9 +7,19 @@ clickable {
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 24px; scroll-behavior: smooth; cursor: $cursor-default}
+//Scrollbar
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+html {
+  font-size: 24px;
+  scroll-behavior: smooth;
+  cursor: $cursor-default;
+}
 
 body {
+  
   font-family: $font-body;
   font-size: 1.05rem;
   line-height: 1.75;
@@ -17,12 +27,6 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
-
-// Custom scrollbar
-::-webkit-scrollbar { width: thin; }
-::-webkit-scrollbar-track { background: $stone; }
-::-webkit-scrollbar-thumb { background: $gold-dim; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: $gold; }
 
 ::selection { background: rgba($gold, 0.25); color: $parchment; }
 
