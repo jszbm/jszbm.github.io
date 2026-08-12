@@ -7,6 +7,12 @@ clickable {
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+//Font overrides
+.jp {
+  font-family: 'Noto Serif JP';
+}
+
+
 //Scrollbar
 ::-webkit-scrollbar {
   width: 0px;
@@ -19,7 +25,6 @@ html {
 }
 
 body {
-  
   font-family: $font-body;
   font-size: 1.05rem;
   line-height: 1.75;
@@ -86,7 +91,6 @@ img { max-width: 100%; height: auto; display: block; }
   margin: $s4 0;
   opacity: 0.6;
 }
-
 // Tag pill
 .tag {
   font-family: $font-ui;
