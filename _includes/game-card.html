@@ -49,9 +49,9 @@
     {% endif %}
 
     <div class="game-card__meta">
-      {% if g.year %}<span>年 {{ g.year }}</span>{% endif %}
+      {% if g.year %}<span class="jp">年 {{ g.year }}</span>{% endif %}
       {% if g.engine %}<span>⚙ {{ g.engine }}</span>{% endif %}
-      {% if g.role %}<span>役割 {{ g.role }}</span>{% endif %}
+      {% if g.role %}<span class="jp">役割 {{ g.role }}</span>{% endif %}
     </div>
 
     {% if g.description %}
@@ -67,7 +67,7 @@
     {%- comment -%} ── AUDIO PLAYER ─────────────────────── {%- endcomment -%}
     {% if g.audio and g.audio.size > 0 %}
     <div class="audio-player">
-      <p class="audio-player__label">サントラ Soundtrack</p>
+      <p class="audio-player__label"><span class="jp">サントラ</span> Soundtrack</p>
       {% for track in g.audio %}
       <div class="audio-track" data-src="{{ track.file }}">
         <button class="audio-track__play" aria-label="Play {{ track.title }}">▶</button>

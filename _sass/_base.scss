@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-family: $font-body;
+  font-family: $font-body,  'Noto Serif JP';
   font-size: 1.05rem;
   line-height: 1.75;
   background: linear-gradient($void-up, $void);
