@@ -67,7 +67,7 @@
     {%- comment -%} ── AUDIO PLAYER ─────────────────────── {%- endcomment -%}
     {% if g.audio and g.audio.size > 0 %}
     <div class="audio-player">
-      <p class="audio-player__label">🎵 Soundtrack</p>
+      <p class="audio-player__label">♫ Soundtrack</p>
       {% for track in g.audio %}
       <div class="audio-track" data-src="{{ track.file }}">
         <button class="audio-track__play" aria-label="Play {{ track.title }}">▶</button>
